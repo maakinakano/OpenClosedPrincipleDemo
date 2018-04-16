@@ -14,19 +14,25 @@ abstract class Circle extends Shape {
 abstract class Square extends Shape {
    private int size;
    private Point topLeft;
-   public Circle(int size, Point topLeft) {
+   public Square(int size, Point topLeft) {
       this.size = size;
       this.topLeft = topLeft;
    }
 }
 
 class BigCircle extends Circle {
+   public BigCircle(int radius, Point center) {
+       super(radius, center);
+   }
    public void Draw() {
       //円を描く
    }
 }
 
 class BigSquare extends Square {
+   public BigSquare(int size, Point topLeft) {
+       super(size, topLeft);
+   }
    public void Draw() {
       //正方形を描く
    }
