@@ -1,8 +1,9 @@
 abstract class Shape implements Comparable<Shape>{
    abstract public void Draw();
-   protected double priority;
    public int compareTo(Shape other){
-      return new Integer(priority).compareTo(other.priority);
+       int thisPriority = Util.priority.get(this.getClass().getName());
+       int otherPriority = Util.priority.get(other.getClass().getName());
+      return new Integer(thisPriority).compareTo(otherPriority);
    }
 }
 
@@ -10,7 +11,6 @@ abstract class Circle extends Shape {
    private int radius;
    private Point center;
    public Circle(int radius, Point center) {
-       this.priority = 1D;
        this.radius = radius;
        this.center = center;
    }
@@ -20,7 +20,6 @@ abstract class Square extends Shape {
    private int size;
    private Point topLeft;
    public Square(int size, Point topLeft) {
-       this.priority = 2D;
        this.size = size;
        this.topLeft = topLeft;
    }
@@ -56,5 +55,14 @@ class Point {
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+}
+
+class Util {
+    public final Map<String, Integer> priority;
+    static{
+        priority = new HashMap<>();
+        priority.put(Circle.getClass.getName(), 1);
+        priority.put(Square.getClass.getName(), 2);
     }
 }
