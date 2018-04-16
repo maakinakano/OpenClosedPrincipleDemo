@@ -60,7 +60,7 @@ class Point {
 
 class Util {
     public final Map<String, Integer> priority = new HashMap<>() {
-        put(Circle.getClass.getName(), 1);
-        put(Square.getClass.getName(), 2);
+        put(Circle.getClass().getName(), 1);
+        put(Square.getClass().getName(), 2);
     };
 }
