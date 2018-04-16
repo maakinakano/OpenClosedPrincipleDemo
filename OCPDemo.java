@@ -1,4 +1,4 @@
-abstract class Shape {
+abstract class Shape{
    abstract public void Draw();
 }
 
@@ -40,7 +40,8 @@ class BigSquare extends Square {
 
 class DrawingTool {
     public void DrawAllShapes(List<Shape> shapeList) {
-        shapeList.forEach(Shape::Draw);
+        shapeList.stream().filter(shape -> shape instanceof Circle).forEach(Shape::Draw);
+        shapeList.stream().filter(shape -> shape instanceof Square).forEach(Shape::Draw);
     }
 }
 
