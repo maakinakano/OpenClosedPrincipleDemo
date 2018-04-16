@@ -32,7 +32,7 @@ class BigSquare extends Square {
    }
 }
 
-class DrowingTool {
+class DrawingTool {
     public void DrawAllShapes(List<Shape> shapeList) {
         shapeList.forEach(Shape::Draw);
     }
